@@ -4,7 +4,7 @@ function Todos({ todos }) {
         <div>
             <ul>
                 {todos.map((todos, index) => (<div key={index}>
-                    <input type="checkbox" checked={todos.isComplete}/>{todos.description}
+                    <input type="checkbox" checked={todos.isComplete} onchange={}/>{todos.description}
                     {todos.isComplete&&"(Done!)"}
                 </div>))}
             </ul>
