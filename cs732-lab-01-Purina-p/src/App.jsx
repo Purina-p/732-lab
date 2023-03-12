@@ -2,12 +2,13 @@ import Aboutme from "./Aboutme";
 import ToDolist from "./ToDolist";
 import './App.css';
 import Lightbulb from "./Lightbulb";
+import Todos from "./Todos"
 
 function App() {
 
   const todos=[
     {description:'Finish lecture',isComplete:true},
-    {description:'Do homework',isComplete:flase},
+    {description:'Do homework',isComplete:false},
     {description:'Sleep',isComplete:true}
   ]
 
