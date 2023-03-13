@@ -25,7 +25,7 @@ function App() {
       description:todo.description,
       isComplete:e
     }
-    // 把有着特定index的todo改变他的description
+    // 把有着特定index的todo改变他的description，同时改变他的isComplete
 
     setTodos([...newTodos])
 
