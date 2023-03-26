@@ -1,4 +1,5 @@
 import Aboutme from "./Aboutme";
+import { useState } from "react";
 import ToDolist from "./ToDolist";
 import './App.css';
 import Lightbulb from "./Lightbulb";
@@ -12,21 +13,21 @@ const intialtodos = [
 
 function App() {
 
-  const[todos,setTodos]=useState(intialtodos);
+  const [todos, setTodos] = useState(intialtodos);
   // 将todos初始化，设为initialtodos
 
-  function ChangeIsComplete(todo,e){
-    
+  function ChangeIsComplete(todo, e) {
+
     const index = todos.indexOf(todo);
     // 寻找todo里面的索引
     const newTodos = [...todos];
     // 继承我之间改变过的或者是未改变的列表
+
     newTodos[index] = {
-      description:todo.description,
-      isComplete:e
+      description: todo.description,
+      isComplete: e
     }
     // 把有着特定index的todo改变他的description，同时改变他的isComplete
-
     setTodos([...newTodos])
 
   }
@@ -40,8 +41,7 @@ function App() {
       <h1>My light bulb</h1>
       <Lightbulb />
       <h1>My todos</h1>
-      <Todos todos={todos} ChangeIsComplete={ChangeIsComplete}/>
-
+      <Todos todos={todos} ChangeIsComplete={ChangeIsComplete} />
     </div>
   );
 }

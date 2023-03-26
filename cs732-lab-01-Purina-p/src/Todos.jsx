@@ -3,9 +3,9 @@ function Todos({ todos, ChangeIsComplete }) {
     return (
         <div>
             <ul>
-                {todos.map((todos, index) => (<div key={index}>
-                    <input type="checkbox" checked={todos.isComplete} onchange={(e) => ChangeIsComplete(todo, e.target.checked)} />{todos.description}
-                    {todos.isComplete ? <span>(Done!)</span>:<span></span>}
+                {todos.map((todo, index) => (<div key={index} style={{ textDecoration: completed.includes(index) ? "line-through" : "" }}>
+                    <input type="checkbox" defaultChecked={todo.isComplete} checked={todo.isComplete} onChange={(e) => ChangeIsComplete(todo, e.target.checked)} />{todo.description}
+                    {todo.isComplete ? <span>(Done!)</span> : <span></span>}
                 </div>))}
             </ul>
         </div>
