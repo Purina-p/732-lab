@@ -1,0 +1,24 @@
+.todo{
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.todo:nth-child(odd){
+    background-color: lightgray;
+}
+
+.todo:nth-child(even){
+    background-color: grey;
+}
+
+.todo:hover{
+    background-color: paleturquoise;
+}
+
+.done{
+    color:darkgray;
+    text-decoration: line-through;
+}

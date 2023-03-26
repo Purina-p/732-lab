@@ -4,6 +4,7 @@ import ToDolist from "./ToDolist";
 import './App.css';
 import Lightbulb from "./Lightbulb";
 import Todos from "./Todos"
+import NewTodoItem from "./NewTodoItem";
 
 const intialtodos = [
   { description: 'Finish lecture', isComplete: true },
@@ -33,6 +34,14 @@ function App() {
   }
 
 
+  function AddTodo(description){
+    var NewTodoItem =[...todos];
+    NewTodoItem.push({description: description, isComplete: false})
+    setTodos(NewTodoItem);
+  }
+
+
+
   return (
     <div>
       <h1>About me</h1>
@@ -42,6 +51,8 @@ function App() {
       <Lightbulb />
       <h1>My todos</h1>
       <Todos todos={todos} ChangeIsComplete={ChangeIsComplete} />
+      <h1>Add item</h1>
+      <NewTodoItem onAddTodo={(description) => AddTodo(description)}/>
     </div>
   );
 }
