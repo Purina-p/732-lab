@@ -33,11 +33,17 @@ function App() {
 
   }
 
-
-  function AddTodo(description){
-    var NewTodoItem =[...todos];
-    NewTodoItem.push({description: description, isComplete: false})
+  function AddTodo(description) {
+    const NewTodoItem = [...todos];
+    NewTodoItem.push({ description: description, isComplete: false })
     setTodos(NewTodoItem);
+  }
+
+  function handleRemove(index) {
+    const newTodos = [...todos];
+    newTodos.splice(index, 1);
+    console.log(newTodos)
+    setTodos(newTodos);
   }
 
 
@@ -50,9 +56,9 @@ function App() {
       <h1>My light bulb</h1>
       <Lightbulb />
       <h1>My todos</h1>
-      <Todos todos={todos} ChangeIsComplete={ChangeIsComplete} />
+      <Todos todos={todos} ChangeIsComplete={ChangeIsComplete} onRemove={handleRemove} />
       <h1>Add item</h1>
-      <NewTodoItem onAddTodo={(description) => AddTodo(description)}/>
+      <NewTodoItem onAddTodo={(description) => AddTodo(description)} />
     </div>
   );
 }

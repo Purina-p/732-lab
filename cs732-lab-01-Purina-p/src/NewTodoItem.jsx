@@ -1,10 +1,11 @@
 import { useState } from "react";
+import styles from "./NewToDoItem.module.css"
 
 export default function NewTodoItem({onAddTodo}) {
     const [description, setDescription] = useState('');
 
     return (
-        <div>
+        <div className={styles.newTodo}>
             <label>Description:</label>
             <input type="text" value={description}
                 onInput={e => setDescription(e.target.value)} />

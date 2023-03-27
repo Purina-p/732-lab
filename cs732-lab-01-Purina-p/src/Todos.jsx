@@ -1,13 +1,13 @@
 import styles from './Todos.module.css';
 
-function Todos({ todos, ChangeIsComplete }) {
+function Todos({ todos, ChangeIsComplete, onRemove }) {
 
     return (
         <div>
             <ul>
                 {todos.map((todo, index) => (
                     <div key={index} className={styles.todo}>
-                        <label className={todo.isComplete ? styles.done: undefined}>
+                        <label className={todo.isComplete ? styles.done : undefined}>
                             <input type="checkbox"
                                 defaultChecked={todo.isComplete}
                                 checked={todo.isComplete}
@@ -15,6 +15,7 @@ function Todos({ todos, ChangeIsComplete }) {
                             {todo.description}
                             {todo.isComplete ? <span>(Done!)</span> : <span></span>}
                         </label>
+                        <button onClick={() => onRemove(index)}>Remove</button>
                     </div>))}
             </ul>
         </div>
